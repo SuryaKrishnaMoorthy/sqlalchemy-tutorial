@@ -11,7 +11,7 @@ class Stuntman(Base):
     name = Column(String)
     active = Column(Boolean)
     actor_id = Column(Integer, ForeignKey('actors.id'))
-    actor = relationship('Actors', backref=backref('stuntman', uselist=False))
+    actor = relationship('Actor', backref=backref('stuntman', uselist=False))
 
     def __init__(self, name, active, actor):
         self.name = name
